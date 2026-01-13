@@ -1,0 +1,33 @@
+{
+  "slug": "excel-reader",
+  "display_name": "Excel Reader Toolkit",
+  "description": "Reads an Excel file from Downloads folder and returns its contents as JSON",
+  "version": "0.1.0",
+  "entrypoint": {
+    "type": "python",
+    "command": "python main.py"
+  },
+  "capabilities": [
+    {
+      "name": "read_excel_file",
+      "description": "Reads an Excel file and returns its data",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "description": "Name of the Excel file in Downloads folder"
+          },
+          "sheet_name": {
+            "type": "string",
+            "description": "Optional sheet name to read",
+            "default": "Sheet1"
+          }
+        },
+        "required": ["filename"]
+      }
+    }
+  ],
+  "author": "Your Name",
+  "tags": ["excel", "filesystem", "rpa"]
+}
